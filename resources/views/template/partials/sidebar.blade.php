@@ -10,10 +10,10 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('adminlte/dist/img/admin.png') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ asset('adminlte/dist/img/LJLogo.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">LAUDRY</a>
+          <a href="#" class="d-block">Laundry Jaya</a>
         </div>
       </div>
 
@@ -40,22 +40,85 @@
               </p>
             </a>
           </li>
+          @if (auth()->user()->role == 'admin')
+          <li class="nav-header">WILAYAH ADMIN NICH</li>
           <li class="nav-item">
-            <a href="/dashboard/kasir" class="nav-link">
-              <i class="nav-icon fas fa-sharp fa-solid fa-user-tie"></i>
+            <a href="/outlet" class="nav-link">
+              <i class="nav-icon fas fa-building"></i>
               <p>
-                Kasir
+                Outlet
               </p>
             </a>
           </li>
+          <li class="nav-header">WILAYAH PAKET NICH</li>
           <li class="nav-item">
-            <a href="/dashboard/owner" class="nav-link">
-              <i class="nav-icon fas fa-sharp fa-solid fa-user-tie"></i>
+            <a href="/paket" class="nav-link">
+              <i class="nav-icon fas fa-swatchbook"></i>
               <p>
-                Owner
+                Paket
               </p>
             </a>
           </li>
+          <li class="nav-header">WILAYAH MEMBER NICH</li>
+          <li class="nav-item">
+            <a href="/member" class="nav-link">
+              <i class="nav-icon fas fa-swatchbook"></i>
+              <p>
+                Member
+              </p>
+            </a>
+          </li>
+          <li class="nav-header">WILAYAH TRANSAKSI NICH</li>
+          <li class="nav-item">
+            <a href="/transaksi" class="nav-link">
+              <i class="nav-icon fas fa-swatchbook"></i>
+              <p>
+                Transaksi
+              </p>
+            </a>
+          </li>
+          <li class="nav-header">WILAYAH USER NICH</li>
+          <li class="nav-item">
+            <a href="/user" class="nav-link">
+              <i class="nav-icon fas fa-swatchbook"></i>
+              <p>
+                Pengguna
+              </p>
+            </a>
+          </li>
+          @endif
+          @if (auth()->user()->role == 'kasir')
+              <li class="nav-item">
+                <a href="/dashboard/kasir" class="nav-link">
+                  <i class="nav-icon fas fa-money-check"></i>
+                  <p>
+                    Kasir
+                  </p>
+                </a>
+              </li>
+          @endif
+          @if (auth()->user()->role == 'owner')
+              <li class="nav-item">
+                <a href="/dashboard/owner" class="nav-link">
+                  <i class="nav-icon fas fa-money-check"></i>
+                  <p>
+                    Owner
+                  </p>
+                </a>
+              </li>
+              @endif
+              <li class="nav-item">
+              <a href="{{ route('logout.admin')}}"class="nav-link">
+                  <i class="nav-icon fas fa-sign-in-alt"></i>
+                  <p>
+                    LOGOUT
+                  </p>
+                </a>
+              </li>
+              </li>
+            </ul>
+          </nav>
+
         
 
 
@@ -98,17 +161,9 @@
               </p>
             </a>
           </li> -->
-          <br>
+          <!-- <br> -->
          
-            <li class="nav-item">
-                <a href="{{ route('logout.admin') }}" class="nav-link">
-                  <i class="nav icon fas fa-sign-out-alt"> Logout </i>
-                </a>
-              </li>
-  
-          </li>
-        </ul>
-      </nav>
+          
         
 </div>
     <!-- /.sidebar -->

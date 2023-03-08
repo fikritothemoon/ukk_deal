@@ -26,7 +26,7 @@
                   </div>
 
                   <div class="form-group">
-                  <label> Jenis Paket </label>
+                  <label> Jenis </label>
                     <br>
                     <select name="jenis" class="form-control" id="jenis">
                       <option selected>Open this select menu</option>

@@ -14,12 +14,29 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css') }}">
 </head>
+<style>
+    button {
+      transition: width 2s;
+    }
+    button:hover {
+      opacity: 0.7;
+    }
+    body {
+      
+       background-image: url("{{asset('adminlte/dist/img/baju.jpg')}}");
+       height: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 <body class="hold-transition login-page">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1"><b>LAUDRY</b>P3</a>
+      <a href="../../index2.html" class="h1"><b>LAUNDRY</b>JAYA</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>

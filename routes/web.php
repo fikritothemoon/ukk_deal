@@ -8,6 +8,8 @@ use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DetailTransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +46,8 @@ Route::view('error/403', 'error.403')->name('error.403');
 Route::resource('outlet', OutletController::class)->middleware('auth', 'role:outlet');
 Route::resource('paket', PaketController::class)->middleware('auth', 'role:paket');
 Route::resource('member', MemberController::class)->middleware('auth', 'role:member');
-Route::resource('transaksi', TransaksiController::class)->middleware('auth', 'role:transaksi');
+Route::resource('user', UserController::class)->middleware('auth','role:admin');
+Route::resource('transaksi', TransaksiController::class)->middleware('auth','role:transaksi');
 
 
 Route::middleware(['auth', 'role:kasir'])->group(function(){

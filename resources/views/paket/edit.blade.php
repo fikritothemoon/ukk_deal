@@ -16,7 +16,7 @@
               @method('PUT') 
               <div class="card-body">
                 <div class="form-group">
-                    <label for="inputalamat">Id Outlet</label>
+                    <label for="inputalamat">Outlet Id</label>
                     <input type="text" name="outlet_id" class="form-control" id="inputoutlet_id" value="{{ $paket->outlet_id }}">
                 </div>
               
@@ -29,7 +29,7 @@
                     <option value="selimut">Selimut</option>
                     <option value="bed_cover">Bed Cover</option>
                     <option value="kaos">Kaos</option>
-                    <option value="jenis">Jenis</option>
+                    <option value="lain">Lainnya</option>
                     </select>
                   </div>
                   

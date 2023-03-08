@@ -27,7 +27,7 @@
         <thead>
         <tr>
           <th>No</th>
-          <th>Nama Outlet</th>
+          <th>Outlet Id</th>
           <th>Jenis</th>
           <th>Nama Paket</th>
           <th>Harga</th>
@@ -38,27 +38,17 @@
           @forelse($paket as $paket)
          <tr>
           <td>{{ $loop->iteration }}</td>
-          
+          <td>{{ $paket->outlet_id }}</td>
           <td>{{ $paket->jenis }}</td>
           <td>{{ $paket->nama_paket }}</td>
           <td>{{ $paket->harga }}</td>
           <td>
           <form action="{{ route ('paket.destroy', [$paket->id])}}" method="POST">
-              <a class="btn btn-info mr-3" href="paket/{{$paket->id}}">
-                <i class="fas fa-info-circle"></i>
-                Detail
-              </a>
-              <a class="btn btn-warning mr-3" href="paket/{{$paket->id}}/edit">
-              <i class="far fa-edit"></i> 
-              Edit
-              </a>
-            @csrf
+              <a class="btn btn-info mr-3" href="paket/{{$paket->id}}">Detail</a>
+              <a class="btn btn-warning mr-3" href="paket/{{$paket->id}}/edit">Edit</a>
+              @csrf
             @method('DELETE')
-            
-           <button type="submit" class="btn btn-danger" value="Delete">
-           <i class="fas fa-solid fa-trash"></i>
-            Delete
-           </button>
+           <input type="submit" class="btn btn-danger" value="Delete">
           </form>
             </td>
          </tr>

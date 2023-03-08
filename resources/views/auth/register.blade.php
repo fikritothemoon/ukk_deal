@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CHNTY | Registration </title>
+  <title>FIKRI | Registration </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -14,6 +14,23 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('adminlte/dist/css/adminlte.min.css')}}">
 </head>
+<style>
+    button {
+      transition: width 2s;
+    }
+    button:hover {
+      opacity: 0.7;
+    }
+    body {
+      
+       background-image: url("{{asset('adminlte/dist/img/baju.jpg')}}");
+       height: 100%;
+      /* Center and scale the image nicely */
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="card card-outline card-primary">

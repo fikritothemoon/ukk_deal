@@ -49,18 +49,22 @@
       </div>
       <!-- /.card-header -->
       <!-- form start -->
-        <div class="card-body">
+      <div class="card-body">
           <div class="form-group">
             <label for="exampleInputEmail1">Pilih Data Member</label>
+            <select name="id_member" id="id_member" class="form-control">
+              <option selected disabled>--Pilih Data Member--</option>
+              @forelse ($member as $member)
+                <option value="{{ $member->id }}">{{ $member->nama }}</option>                  
+              @empty
+                <option selected disabled>Tidak Ada Paket Tersedia</option>
+              @endforelse
+            </select>
           </div>
         </div>
     </div>
-    <!-- /.card -->
-
+    
   </div>
-  <!--/.col (left) -->
-  <!-- right column -->
-  <!--/.col (right) -->
 </div>
 
 @endsection
