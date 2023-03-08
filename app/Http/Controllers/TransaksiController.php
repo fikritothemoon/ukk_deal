@@ -109,11 +109,11 @@ class TransaksiController extends Controller
     public function show(Transaksi $transaksi)
     {
         //
-        $member         = Members::all();
+        $member         = Member::all();
         $outlets        = Outlet::all();
         $user           = User::all();
         $transaksi      = Transaksi::find($transaksi->id);
-        return view('transaksi.show', compact('transaksi', 'members', 'outlets', 'user'));
+        return view('transaksi.show', compact('transaksi', 'member', 'outlets', 'user'));
        
     }
 
@@ -128,8 +128,8 @@ class TransaksiController extends Controller
         //
         $transaksi = Transaksi::all();
         $pakets = Paket::all();
-        $members = Member::all();
-        return view('transaksi.proses', compact('pakets', 'member', 'transaksis'));
+        $member = Member::all();
+        return view('transaksi.proses', compact('pakets', 'member', 'transaksi'));
     }
 
     /**

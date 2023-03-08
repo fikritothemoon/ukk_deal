@@ -32,6 +32,7 @@
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        @if (auth()->user()->role == 'admin')
           <li class="nav-item">
             <a href="/dashboard/admin" class="nav-link">
               <i class="nav-icon fas fa-sharp fa-solid fa-user-tie"></i>
@@ -40,7 +41,6 @@
               </p>
             </a>
           </li>
-          @if (auth()->user()->role == 'admin')
           <li class="nav-header">WILAYAH ADMIN NICH</li>
           <li class="nav-item">
             <a href="/outlet" class="nav-link">

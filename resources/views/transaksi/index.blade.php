@@ -19,19 +19,18 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <a href="transaksi/create" class="btn btn-info mb-3">
-          <i class="fas fa-plus"></i>
-           Create
-        </a>
+        
       <table id="example2" class="table table-bordered table-hover">
         <thead>
     <tr>
         <td class="th1">NO</td>
-        <td class="th5">Outlet Id</td>
+        <td class="th5">Nama Outlet</td>
+        <td class="th5">Nama Member</td>
         <td class="th3">Kode Invoice</td>
         <td class="th2">Tanggal</td>
         <td class="th4">Status</td>
         <td class="th4">Dibayar</td>
+        <td class="th4">Harga</td>
         <td class="th4">Action</td>
     </tr>
         </thead>
@@ -39,10 +38,12 @@
             <tr>
           @forelse($transaksi as $transaksi)
           <th class="th1">{{ $loop->iteration}}</th>
-            <td class="th2">{{ $transaksi->outlet_id}}</td>
+            <td class="th2">{{ $transaksi->outlet->nama}}</td>
+            <td class="th2">{{ $transaksi->member->nama}}</td>
             <td class="th3">{{ $transaksi->kode_invoice}}</td>
             <td class="th2">{{ $transaksi->tgl}}</td>
             <td class="th2">{{ $transaksi->status}}</td>
+            
             <td class="th2">{{ $transaksi->dibayar}}</td>
             <td class="th4">
           <form action="{{ route ('transaksi.destroy', [$transaksi->id])}}" method="POST">
