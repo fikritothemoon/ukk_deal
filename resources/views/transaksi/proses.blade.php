@@ -52,7 +52,7 @@
       <div class="card-body">
           <div class="form-group">
             <label for="exampleInputEmail1">Pilih Data Member</label>
-            <select name="id_member" id="id_member" class="form-control">
+            <select name="member_id" id="member_id" class="form-control">
               <option selected disabled>--Pilih Data Member--</option>
               @forelse ($member as $member)
                 <option value="{{ $member->id }}">{{ $member->nama }}</option>                  
@@ -93,7 +93,7 @@
         <td class="th4">Status</td>
         <td class="th4">Dibayar</td>
         <!-- <td class="th4">Harga</td> -->
-        <td class="th4">Action</td>
+       
     </tr>
         </thead>
         <tbody>
@@ -107,24 +107,7 @@
             <td class="th2">{{ $transaksi->status}}</td>
             <td class="th2">{{ $transaksi->dibayar}}</td>
             <!-- <td class="th2">{{ $transaksi->paket}}</td> -->
-            <td class="th4">
-          <form action="{{ route ('transaksi.destroy', [$transaksi->id])}}" method="POST">
-              <a class="btn btn-info mr-3" href="transaksi/{{$transaksi->id}}">
-                <i class="fas fa-info-circle"></i>
-                Detail
-              </a>
-              <a class="btn btn-warning mr-3" href="transaksi/{{$transaksi->id}}/edit">
-              <i class="far fa-edit"></i> 
-              Edit
-              </a>
-            @csrf
-            @method('DELETE')
-           <button type="submit" class="btn btn-danger" value="Delete">
-           <i class="fas fa-solid fa-trash"></i>
-            Delete
-           </button>
-          </form>
-            </td>
+            
          </tr>
          @empty
          <tr>

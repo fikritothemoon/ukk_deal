@@ -41,10 +41,10 @@ class TransaksiController extends Controller
         $transaksi = new Transaksi;
         $transaksi->outlet_id       = Auth::user()->outlet_id;
         $transaksi->kode_invoice    = '';
-        $transaksi->member_id       = '1'; 
-        $transaksi->tgl             = Carbon::now()->format('Y-m-d');
-        $transaksi->batas_waktu     = Carbon::now()->format('Y-m-d');
-        $transaksi->tgl_bayar       = Carbon::now()->format('Y-m-d');
+        $transaksi->member_id       = $request->member_id; 
+        $transaksi->tgl             = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
+        $transaksi->batas_waktu     = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
+        $transaksi->tgl_bayar       = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
         $transaksi->biaya_tambahan  = 0;
         $transaksi->diskon          = 0;
         $transaksi->pajak           = 0;

@@ -31,7 +31,6 @@
         <td class="th4">Status</td>
         <td class="th4">Dibayar</td>
         <td class="th4">Harga</td>
-        <td class="th4">Action</td>
     </tr>
         </thead>
         <tbody>
@@ -45,23 +44,8 @@
             <td class="th2">{{ $transaksi->status}}</td>
             
             <td class="th2">{{ $transaksi->dibayar}}</td>
-            <td class="th4">
-          <form action="{{ route ('transaksi.destroy', [$transaksi->id])}}" method="POST">
-              <a class="btn btn-info mr-3" href="transaksi/{{$transaksi->id}}">
-                <i class="fas fa-info-circle"></i>
-                Detail
-              </a>
-              <a class="btn btn-warning mr-3" href="transaksi/{{$transaksi->id}}/edit">
-              <i class="far fa-edit"></i> 
-              Edit
-              </a>
-            @csrf
-            @method('DELETE')
-           <button type="submit" class="btn btn-danger" value="Delete">
-           <i class="fas fa-solid fa-trash"></i>
-            Delete
-           </button>
-          </form>
+            <td class="th2">{{ $transaksi->paket}}</td>
+           
             </td>
          </tr>
          @empty
