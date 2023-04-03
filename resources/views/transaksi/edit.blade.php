@@ -1,9 +1,5 @@
 @extend('template.master')
 
-@section('judul')
-<h1>Ini Halaman Edit Transaksi</h1>
-@endsection
-
 @section('content')
 <div class="col-md-12">
     <div class="card card-primary">
@@ -27,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="member_id">Member Id</label>
-                <input type="text" name="member_id" class="form-control" id="Kode_Invoice"
+                <input type="text" name="member_id" class="form-control" id="inputNIS"
                 placeholder="Enter Nomer Induk Siswa" value="{{transaksi->member_id}}">
             </div>
             <div class="form-group">

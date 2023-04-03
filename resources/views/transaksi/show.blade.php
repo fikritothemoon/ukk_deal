@@ -1,9 +1,5 @@
 @extends('template.master')
 
-@section('judul')
-<h1>Ini Halaman Detail/Show Transaksi</h1>
-@endsection
-
 @section('content')
 <div class="col-md-12">
   <div class="card card-primary">
@@ -17,7 +13,7 @@
        <div class="card-body">
         <div class="form-group">
           <label for="outlets_id">Outlet Id</label>
-          <input type="text" name="outlets_id" class="form-control" id="inputoutlet" 
+          <input type="text" name="outlets_id" class="form-control" id="inputNIS" 
           placeholder="Nama Outlet"value="{{ $transaksi->outlets_id }}" disabled > 
         </div>
              <div class="form-group">

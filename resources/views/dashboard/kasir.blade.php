@@ -1,11 +1,5 @@
 @extends('template.master')
 
-@push('css')
-<!-- Select2 -->
-<link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2/css/select2.min.css') }}">
-<link rel="stylesheet" href="{{ asset('Adminlte/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
-@endpush
-
 @section('content')
 
 <div class="row">

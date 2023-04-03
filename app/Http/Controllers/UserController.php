@@ -30,7 +30,7 @@ class UserController extends Controller
     {
         //
         $users = user::all();
-        return view('home', compact('users'));
+        return view('welcome', compact('users'));
     }
 
     /**
@@ -114,14 +114,13 @@ class UserController extends Controller
             'role' => 'required',
             'outlet_id' => 'required',
         ]);
-            User::create([
-                'nama' => $request->nama,
-                'username' => $request->username,
-                'password' => bcrypt('password'),
-                'role' => $request->role,
-                'outlet_id' => $request->outlet_id,
-            ]);
-            return redirect()->route('user.index');
+        $users = User::find($user->id);
+        $users->nama = $request->username;
+        $users->username = $request->username;
+        $users->password = $request->password;
+        $users->role = $request->role;
+        $users->update();
+        return redirect('/user');
     }
 
     /**

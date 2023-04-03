@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             // $table->timestamp('email_verified_at')->nullable();
             $table->text('password');
             $table->enum('role', ['admin', 'kasir', 'owner']);
-            $table->foreignId('outlet_id')->constrained('outlets');
+            $table->foreignId('outlet_id')->constrained('outlets')->oneDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
