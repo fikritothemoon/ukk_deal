@@ -4,24 +4,24 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Event\TrxEvent;
+use App\Events\TrxEvent;
 
 class Transaksi extends Model
 {
     use HasFactory;
     protected $table = "transaksis";
     protected $fillable = [
-        'id', 'outlet_id', 'kode_invoice', 'member_id', 'tgl', 'batas_waktu', 
-        'tgl_bayar', 'biaya_tambahan', 'diskon', 'pajak', 'status', 'dibayar', 'user_id'
+        'id','outlet_id','kode_invoice','member_id','tgl','batas_waktu',
+        'tgl_bayar','biaya_tambahan','diskon','pajak','status','dibayar','user_id',
     ];
     protected $dispatchesEvents = [
-        'creating' => \App\Listeners\TransaksiId::class,
+    'creating' => \App\Listeners\TransaksiId::class,
     ];
     protected static function boot()
     {
         parent::boot();
 
-        static::creating(function ($transaksi){
+        static::creating(function ($transaksi) {
             // generate kode invoice
             $lastTransaksi = Transaksi::orderBy('id', 'desc')->first();
             if ($lastTransaksi) {
@@ -33,7 +33,7 @@ class Transaksi extends Model
             $transaksi->kode_invoice = $kode_invoice;
         });
 
-        static::created(function ($transaksi){
+        static::created(function ($transaksi) {
             event(new TrxEvent($transaksi));
         });
     }
@@ -48,15 +48,15 @@ class Transaksi extends Model
     {
         return $this->belongsTo('App\Models\Member','member_id');
     }
-
+    
     public function user()
     {
         return $this->belongsTo('App\Models\User','user_id');
     }
-
+    
     public function paket()
-    {
-        return $this->belongsTo(Paket::class);
+    {   
+    return $this->belongsTo(Paket::class);
     }
 
     public function paketDetail()

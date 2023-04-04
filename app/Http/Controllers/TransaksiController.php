@@ -63,7 +63,6 @@ class TransaksiController extends Controller
         $transaksi->save();
         return redirect()->route('transaksi.proses', $transaksi->id);
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -126,15 +125,15 @@ class TransaksiController extends Controller
      * @param  \App\Models\Transaksi  $transaksi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaksi $transaksi, Paket $paket)
+    public function edit(DetailTransaksi $Detailtransaksi, Transaksi $transaksi, Paket $paket)
     {
         //
         $transaksi = Transaksi::all();
         $pakets = Paket::all();
         $member = Member::all();
         $details = DetailTransaksi::all();
-        $auto = 'trx' . sprintf('%03d', Transaksi::count() + 1);
-        return view('transaksi.proses', compact('pakets', 'member', 'transaksi'));
+        $autoId = 'trx' . sprintf('%03d', Transaksi::count() + 1);
+        return view('transaksi.proses', compact('pakets', 'member', 'transaksi', 'autoId', 'details'));
     }
 
     /**

@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Models;
+use Illuminate\Database\Eloquent\Model;
 use App\Models\Transaksi;
 
-class Detail_transaksi extends Model
+class DetailTransaksi extends Model
 {
     use HasFactory;
     protected $table = "detail_transaksis";

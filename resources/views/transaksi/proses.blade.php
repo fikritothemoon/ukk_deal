@@ -1,7 +1,7 @@
 @extends('template.master')
 
 @section('content')
-  <br>
+
   <div class="container container-fluid">
     <div class="card mt-4 mb-4">
       <h5 class="card-header d-flex flex-row align-items-center justify-content-between">
@@ -16,8 +16,7 @@
           <div class="form-group row">
             <label for="id" class="col-sm-2 col-form-label">Id Transaksi</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control-plaintext" id="id" name="id" value="{{$autoId}}" required
-                readonly>
+            <input type="text" class="form-control-plaintext" id="id" name="id" value="{{$autoId}}" required readonly>
             </div>
           </div>
           <div class="form-group row">
@@ -108,7 +107,7 @@
           <tbody>
             <tr>
               @php
-                $kode_invoice_terpilih = $transaksis->pluck('kode_invoice')->first();
+                $kode_invoice_terpilih = $transaksi->pluck('kode_invoice')->first();
                @endphp
 
               @foreach ($details as $detail)
